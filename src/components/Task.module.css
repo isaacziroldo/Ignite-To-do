@@ -1,3 +1,50 @@
 .task {
-    
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    background: var(--gray-500);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0 1rem 0;
+}
+
+
+.checkboxWrapper input[type="checkbox"] {
+    cursor: pointer;
+    appearance: none;
+    width: 1.1rem;
+    height: 1.1rem;
+    border: 2px solid var(--blue);
+    border-radius: 3rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    outline: 0;
+}
+
+.checkboxWrapper input[type="checkbox"]:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    opacity: 0;
+    transition: all 600ms ease-in-out;
+    position: absolute;
+    border-radius: 0;
+   
+    border-left: 0;
+    border-top: 0;
+    width: 7px;
+    height: 12px;
+    transform: rotate(45deg);
+    top: 2px;
+}
+
+
+.task p {
+    margin-left: .75rem;
+    margin-right: .75rem;
+    font-size: 0.875rem;
 }

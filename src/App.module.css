@@ -6,3 +6,32 @@
   flex-direction: column;
   align-items: center;
 }
+
+.board {
+  width: 100%;
+}
+
+.createdTask {
+  flex: 1;
+  width: 100%;
+}
+
+.wrapper .tasksCreatedAndCompleted {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .875rem;
+  color: var(--blue);
+}
+
+.wrapper .tasksCreatedAndCompleted span{
+  display: inline-block;
+  color: var(--white);
+  background-color: var(--gray-400);
+  padding: 0 .5rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-left: 8px;
+  font-size: 12;
+}
+
