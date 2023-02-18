@@ -4,6 +4,8 @@ import { EmptyBoard } from './EmptyBoard'
 import { Task } from './Task'
 import { PlusCircle } from 'phosphor-react'
 
+import { v1 as uuidv4 } from 'uuid'
+
 interface Task {
     id: string,
     title: string,
@@ -52,8 +54,10 @@ export function Board() {
 
     function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>){
       event.target.setCustomValidity('')
+
+      const id: string = uuidv4()
       setNewTask({
-        id: (tasks.length + 1).toString(),
+        id: id,
         title: event.target.value,
         isCompleted: false,
       })
