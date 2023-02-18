@@ -9,15 +9,20 @@ interface TaskProps {
     isCompleted: boolean
     checked: boolean
     handleToggle: (id:string) => void
+    onDeleteTask: (id: string) => void
 }
 
 
-export function Task({id, title, isCompleted, checked, handleToggle}: TaskProps){
+export function Task({id, title, isCompleted, checked, handleToggle, onDeleteTask}: TaskProps){
     const [isCheck, setIsCheck] = useState(false);
 
     function handleClick()  {
     setIsCheck(!isCheck)
     handleToggle(id)
+    }
+
+    function handleDeleteTask() {
+        onDeleteTask(id)
     }
     
     return (
@@ -28,8 +33,8 @@ export function Task({id, title, isCompleted, checked, handleToggle}: TaskProps)
             </div>
 
             <span className={isCheck ? styles.textCheck : undefined} onClick={() => handleClick()}>{title}</span>
-            <div>
-            <Trash className={styles.trash} size={20}/>
+            <div className={styles.trash}>
+            <Trash className={styles.trashIcon} size={20} onClick={handleDeleteTask}/>
             </div>
             
         </div>
