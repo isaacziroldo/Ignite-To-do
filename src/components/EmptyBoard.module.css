@@ -12,12 +12,3 @@
     border-radius: 8px;
 
 }
-
-.emptyBoard .clipboard{
-    margin-bottom: 1rem;
-}
-
-.emptyBoard strong, p {
-    line-height: 140%;
-    color: var(--gray-300);
-}
