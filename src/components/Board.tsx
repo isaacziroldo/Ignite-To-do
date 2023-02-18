@@ -1,8 +1,8 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
 import styles from './Board.module.css'
 import { EmptyBoard } from './EmptyBoard'
-import { NewTask } from './NewTask'
 import { Task } from './Task'
+import { PlusCircle } from 'phosphor-react'
 
 interface Task {
     id: string,
@@ -13,10 +13,10 @@ interface Task {
 
 export function Board() {
 
-
     const [tasks, setTasks] = useState<Array <Task> >([
     ]
     )
+
     
     const [newTask, setNewTask] = useState<Task>({
         id: '',
@@ -27,12 +27,17 @@ export function Board() {
 
     const [completedTasksCount, setCompletedTasksCount] = useState<number>(0)
 
-    
+    function deleteTask(taskToDelete: string)  {
+      const tasksWithDeleteOne = tasks.filter(tasklist => {
+        return tasklist.id != taskToDelete 
+      })
+  
+      setTasks(tasksWithDeleteOne)  
+      const arrayCompleted = tasksWithDeleteOne.filter( item => item.isCompleted === true)
+      setCompletedTasksCount(arrayCompleted.length)
+    }
 
     
-
-   
-
     function CreateNewTask(event: FormEvent) {
       event.preventDefault()
       
@@ -46,13 +51,13 @@ export function Board() {
       
     }
 
-      function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>){
-        event.target.setCustomValidity('')
-        setNewTask({
-          id: (tasks.length + 1).toString(),
-          title: event.target.value,
-          isCompleted: false,
-        })
+    function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>){
+      event.target.setCustomValidity('')
+      setNewTask({
+        id: (tasks.length + 1).toString(),
+        title: event.target.value,
+        isCompleted: false,
+      })
        
     }  
 
@@ -75,9 +80,10 @@ export function Board() {
         setCompletedTasksCount(arrayCompleted.length)
         console.log(tasks)
       };
-    
 
-    
+      function handleNewTaskInvalid(event: InvalidEvent<HTMLInputElement>) {
+        event.target.setCustomValidity('essa campo ´e obrigatorio!!!!')
+      }
 
     return(
 
@@ -90,8 +96,10 @@ export function Board() {
                   type="text"
                   value={newTask.title}
                   placeholder='Adicione uma nova tarefa'
-                  onChange={handleNewTaskChange}/>
-                <button type='submit'>Criar</button>
+                  onChange={handleNewTaskChange}
+                  onInvalid={handleNewTaskInvalid}
+                  required={true}/>
+                <button type='submit'>Criar <PlusCircle size={20} /></button>
               </form>
 
               <div className={styles.tasksCreatedAndCompleted}>
@@ -117,15 +125,12 @@ export function Board() {
                         isCompleted = {task.isCompleted}
                         checked={checked}
                         handleToggle={toggleTask}
+                        onDeleteTask={deleteTask}
                     />
                   )
-
                 })}
                 </div> :
                 <EmptyBoard />
-
-                  
-
             }
             </section>
           </div>
