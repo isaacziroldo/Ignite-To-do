@@ -1,10 +1,18 @@
 import styles from './NewTask.module.css'
+import { useState } from 'react';
 
-export function NewTask() {
+interface NewTaskProps {
+    handleCreateNewTask: 
+}
+
+export function NewTask({handleCreateNewTask}: NewTaskProps) {
+
+    
+
     return(
-        <div className={styles.newTask}>
+        <form onSubmit={handleCreateNewTask} className={styles.newTask}>
             <input type="text" placeholder='Adicione uma nova tarefa'/>
-            <button>Criar</button>
-        </div>
+            <button type='submit'>Criar</button>
+        </form>
     )
 }
