@@ -13,7 +13,7 @@ interface TaskProps {
 }
 
 
-export function Task({id, title, isCompleted, checked, handleToggle, onDeleteTask}: TaskProps){
+export function Task({id, title, handleToggle, onDeleteTask}: TaskProps){
     const [isCheck, setIsCheck] = useState(false);
 
     function handleClick()  {

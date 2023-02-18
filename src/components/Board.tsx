@@ -36,7 +36,6 @@ export function Board() {
       const arrayCompleted = tasksWithDeleteOne.filter( item => item.isCompleted === true)
       setCompletedTasksCount(arrayCompleted.length)
     }
-
     
     function CreateNewTask(event: FormEvent) {
       event.preventDefault()
@@ -78,11 +77,10 @@ export function Board() {
         setTasks(updatedArray)
         const arrayCompleted = tasks.filter( item => item.isCompleted === true)
         setCompletedTasksCount(arrayCompleted.length)
-        console.log(tasks)
       };
 
       function handleNewTaskInvalid(event: InvalidEvent<HTMLInputElement>) {
-        event.target.setCustomValidity('essa campo ´e obrigatorio!!!!')
+        event.target.setCustomValidity('Esse campo é obrigatório.')
       }
 
     return(
