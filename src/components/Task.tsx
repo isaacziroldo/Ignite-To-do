@@ -25,7 +25,7 @@ export function Task({id, title, isCompleted, checked, handleToggle}: TaskProps)
 
             <div onClick={() => handleClick()}> 
                 {isCheck ? <BsCheckCircleFill className={styles.taskChecked}/> : <BsCircle className={styles.checkUnchecked}/>}
-             </div>
+            </div>
 
             <span className={isCheck ? styles.textCheck : undefined} onClick={() => handleClick()}>{title}</span>
             <div>
