@@ -49,6 +49,7 @@ export function Board() {
         title: '',
         isCompleted: false,
       })
+    
       
     }
 
@@ -61,6 +62,8 @@ export function Board() {
         title: event.target.value,
         isCompleted: false,
       })
+
+      
        
     }  
 
