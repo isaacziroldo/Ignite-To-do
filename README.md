@@ -48,7 +48,7 @@ Aplicação de lista de Tarefas seguindo o layout criado para o curso Ignite da 
 - [Git Bash](https://gitforwindows.org/)
 - [Phosphor Icons](https://phosphoricons.com/)
 - [Styled Components](https://styled-components.com/)
-
+- [Vite](https://vitejs.dev/)
 
 
 
