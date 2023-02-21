@@ -38,7 +38,9 @@ Aplicação de lista de Tarefas seguindo o layout criado para o curso Ignite da 
 
 <h2 align="center"> Deploy </h2>
 
-- [Ignite ToDo](https://isaacziroldo.github.io/Ignite-To-do/)
+<span align="center">- [Ignite ToDo](https://isaacziroldo.github.io/Ignite-To-do/)</span>
+
+
 
 <h2 id="technologies"> 🛠 Tecnologias utilizadas: </h2>
 
