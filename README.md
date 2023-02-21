@@ -34,13 +34,13 @@
   <div>
 </h1>
 
-Aplicação de lista de Tarefas seguindo o layout criado para o curso Ignite da trilha ReactJS da Rocketseat.
+Aplicação de lista de Tarefas seguindo o layout criado para o curso Ignite da Rocketseat.
 
 <h2 align="center"> Deploy </h2>
 
-<span align="center">- [Ignite ToDo](https://isaacziroldo.github.io/Ignite-To-do/)</span>
 
 
+- [Ignite ToDo](https://isaacziroldo.github.io/Ignite-To-do/)
 
 <h2 id="technologies"> 🛠 Tecnologias utilizadas: </h2>
 
