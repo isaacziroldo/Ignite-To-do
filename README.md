@@ -34,7 +34,7 @@
   <div>
 </h1>
 
-Aplicação de lista de Tarefas seguindo o layout criado para o curso Ignite da Rocketseat.
+Aplicação de lista de Tarefas seguindo o layout criado para o curso Ignite da trilha ReactJS da Rocketseat.
 
 <h2 align="center"> Deploy </h2>
 
